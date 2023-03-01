@@ -45,7 +45,7 @@ namespace Mission09_parkersm.Models.Infastructure
 
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 1; i < PageModels.TotalPages; i++)
+            for (int i = 1; i <= PageModels.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
