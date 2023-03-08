@@ -1,0 +1,42 @@
+﻿@page
+@model Mission09_parkersm.Pages.PurchaseModel
+@{
+}
+
+<h2>Your Basket</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var i in Model.basket.Items)
+        {
+        <tr>
+            <td>@i.Books.Title</td>
+            <td>@i.Quantity</td>
+            <td>@i.Books.Price</td>
+            <td>@(i.Quantity * i.Books.Price)</td>
+        </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">TOTAL</td>
+            <!--Extra Boostrap Added!-->
+            <td class="text-bg-warning">@Model.basket.CalcTotal().ToString("c")</td>
+        </tr>
+    </tfoot>
+</table>
+
+<div>
+    <!--Extra Boostrap Added!!-->
+    <a class="btn btn-primary justify-content-center modal-dialog-centered" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>
