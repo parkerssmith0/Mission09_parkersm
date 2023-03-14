@@ -20,6 +20,6 @@ namespace Mission09_parkersm.Models
         }
 
         public DbSet<Books> Books { get; set; }
-        
+        public DbSet<Checkout> Checkouts { get; set; }
     }
 }
